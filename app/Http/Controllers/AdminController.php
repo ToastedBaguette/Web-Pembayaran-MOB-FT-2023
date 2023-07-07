@@ -28,4 +28,16 @@ class AdminController extends Controller
         
         return redirect()->route('admin-dashboard');
     }
+
+    public function konfirmasiPengambilan(Request $request) {
+        $status = $request->get('status');
+
+        if ($status == "Konfirmasi") {
+            $user = User::find($request->get('id'));
+            $user->konfirmasi = 1;
+            $user->save();
+        }
+        
+        return redirect()->route('admin-dashboard');
+    }
 }

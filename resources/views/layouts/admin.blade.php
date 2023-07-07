@@ -214,7 +214,7 @@
                                                                 colspan="1"
                                                                 aria-label="Position: activate to sort column ascending"
                                                                 style="width: 0px;">Nama</th>
-                                                            <th class="sorting" tabindex="0"
+                                                            {{-- <th class="sorting" tabindex="0"
                                                                 aria-controls="zero_config" rowspan="1"
                                                                 colspan="1"
                                                                 aria-label="Office: activate to sort column ascending"
@@ -223,7 +223,7 @@
                                                                 aria-controls="zero_config" rowspan="1"
                                                                 colspan="1"
                                                                 aria-label="Age: activate to sort column ascending"
-                                                                style="width: 0px;">No Telpon</th>
+                                                                style="width: 0px;">No Telpon</th> --}}
                                                             <th class="sorting" tabindex="0"
                                                                 aria-controls="zero_config" rowspan="1"
                                                                 colspan="1"
@@ -249,6 +249,11 @@
                                                                 colspan="1"
                                                                 aria-label="Salary: activate to sort column ascending"
                                                                 style="width: 0px;">Bukti Pembayaran</th>
+                                                            <th class="sorting" tabindex="0"
+                                                                aria-controls="zero_config" rowspan="1"
+                                                                colspan="1"
+                                                                aria-label="Salary: activate to sort column ascending"
+                                                                style="width: 0px;">Konfirmasi Pengambilan</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -256,8 +261,8 @@
                                                             <tr role='row' class="text-center">
                                                                 <td>{{ $user->nrp }}</td>
                                                                 <td>{{ $user->name }}</td>
-                                                                <td>{{ $user->jurusan }}</td>
-                                                                <td>{{ $user->nomor_telpon }}</td>
+                                                                {{-- <td>{{ $user->jurusan }}</td>
+                                                                <td>{{ $user->nomor_telpon }}</td> --}}
                                                                 <td>{{ $user->id_line }}</td>
                                                                 <td>{{ $user->ukuran ?? "-" }}</td>
                                                                 <td>{{ $user->rekening->nama ?? "-" }}</td>
@@ -272,6 +277,19 @@
                                                                 </td>
                                                                 <td>
                                                                     <button class="btn btn-primary w-100" onclick="showBukti('{{ $user->bukti_pembayaran }}')">Tampilkan</button>
+                                                                </td>
+                                                                <td>
+                                                                    @if($user->status == 'success')
+                                                                        @if($user->konfirmasi == 0)
+                                                                            <button class="btn btn-primary fw-semibold w-100" onclick="konfirmasiPengambilan('{{ $user->id }}')">Konfirmasi</button>
+                                                                        @elseif($user->konfirmasi == 1)
+                                                                            <button class="btn btn-warning fw-semibold w-100" disabled>Confirmed Admin</button>
+                                                                        @elseif($user->konfirmasi == 2)
+                                                                            <button class="btn btn-success fw-semibold w-100" disabled>Confirmed Maharu</button>
+                                                                        @endif
+                                                                    @else
+                                                                        <button class="btn btn-danger fw-semibold w-100" disabled>Belum Success</button>
+                                                                    @endif
                                                                 </td>
                                                             </tr>
                                                         @endforeach
@@ -397,6 +415,29 @@
             </div>
         </div>
     </div>
+
+    <!-- Modal Konfirmasi Pengambilan -->
+    <div class="modal fade" id="modal-konfirmasi-pengambilan" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Konfirmasi Pengambilan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ route('konfirmasi-pengambilan') }}" method="post" onsubmit="return confirm('Yakin nih mau konfirmasi pengambilan?');">
+                        @csrf
+                        <input type="hidden" name="id" value="0" id="id-maharu-konfirmasi"/>
+                        <div class="row m-0">
+                            <div class="col m-0"><input type="submit" name="status" value="Konfirmasi" style="height: 75px; font-size: 28px" class="fw-bold btn btn-success w-100 rounded"/></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
     
 
     <script>
@@ -408,6 +449,11 @@
         const perbaharuiStatus = (id) => {
             $(`#id-maharu`).val(id)
             $(`#modal-perbaharui-status`).modal(`show`)
+        }
+
+        const konfirmasiPengambilan = (id) => {
+            $(`#id-maharu-konfirmasi`).val(id)
+            $(`#modal-konfirmasi-pengambilan`).modal(`show`)
         }
 
         // $('#zero_config').DataTable();

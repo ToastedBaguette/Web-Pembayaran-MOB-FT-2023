@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class DashboardController extends Controller
 {
@@ -47,6 +48,15 @@ class DashboardController extends Controller
             ->where('id', $user)
             ->update(['batchs_id' => $batch]);
         }
+        return response()->json(array(
+            'status' => 'success',
+        ), 200);
+    }
+
+    function konfirmPengambilan(){
+        $user = Auth::user();
+        $user->konfirmasi = 2;
+        $user->save();
         return response()->json(array(
             'status' => 'success',
         ), 200);
