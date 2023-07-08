@@ -195,7 +195,7 @@
           <p class="fs-5 text-mob">
             Rp 80,000.00
           </p>
-          <form action="" method="get">
+          <form action="{{ route('checkout') }}" method="get">
             <label class="fs-5 text-mob mb-2 fw-bold" id="sizedesc">Ukuran: </label>
 
             <ul style="padding-left: 0">
@@ -237,7 +237,7 @@
             </ul>
             <div class="d-flex justify-content-end">
               <input type="hidden" id='status' value="{{ $user->status }}">
-              <button id="btn-submit" class="btn btn-beli btn-lg" type="submit" disabled>Beli</button>
+              <button id="btn-submit" class="btn btn-beli btn-lg" type="submit">Beli</button>
             </div>
           </form>
         </div>
