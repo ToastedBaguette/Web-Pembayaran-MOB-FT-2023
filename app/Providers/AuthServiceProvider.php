@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Auth\Access\Response;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -27,13 +28,17 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('isUser', function($user) {
             if ($user->admin == null) {
-                return $user->name;
+                return Response::allow();
+            } else {
+                return Response::deny();
             }
         });
 
         Gate::define('isAdmin', function($user) {
             if ($user->admin != null) {
-                return $user->name;
+                return Response::allow();
+            } else {
+                return Response::deny();
             }
         });
     }

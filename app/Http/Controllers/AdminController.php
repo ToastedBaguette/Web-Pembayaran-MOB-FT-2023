@@ -11,6 +11,9 @@ class AdminController extends Controller
 {
     public function index() {
         $users = User::where('admin', '=', null)->where('rekenings_id', Auth::user()->admin)->get();
+        if(Auth::user()->admin = 5){
+            $users = User::where('admin', '=', null)->where('status', '!=', 'unpaid')->get();
+        }
         $unpaids = User::where('admin', '=', null)->where('status', 'unpaid')->get();
 
         return view('layouts.admin', compact('users', 'unpaids'));
