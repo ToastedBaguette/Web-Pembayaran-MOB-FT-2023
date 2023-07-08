@@ -214,16 +214,6 @@
                                                                 colspan="1"
                                                                 aria-label="Position: activate to sort column ascending"
                                                                 style="width: 0px;">Nama</th>
-                                                            {{-- <th class="sorting" tabindex="0"
-                                                                aria-controls="zero_config" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Office: activate to sort column ascending"
-                                                                style="width: 0px;">Jurusan</th>
-                                                            <th class="sorting" tabindex="0"
-                                                                aria-controls="zero_config" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Age: activate to sort column ascending"
-                                                                style="width: 0px;">No Telpon</th> --}}
                                                             <th class="sorting" tabindex="0"
                                                                 aria-controls="zero_config" rowspan="1"
                                                                 colspan="1"
@@ -234,11 +224,6 @@
                                                                 colspan="1"
                                                                 aria-label="Salary: activate to sort column ascending"
                                                                 style="width: 0px;">Ukuran</th>
-                                                            <th class="sorting" tabindex="0"
-                                                                aria-controls="zero_config" rowspan="1"
-                                                                colspan="1"
-                                                                aria-label="Salary: activate to sort column ascending"
-                                                                style="width: 0px;">Transfer ke</th>
                                                             <th class="sorting" tabindex="0"
                                                                 aria-controls="zero_config" rowspan="1"
                                                                 colspan="1"
@@ -261,11 +246,8 @@
                                                             <tr role='row' class="text-center">
                                                                 <td>{{ $user->nrp }}</td>
                                                                 <td>{{ $user->name }}</td>
-                                                                {{-- <td>{{ $user->jurusan }}</td>
-                                                                <td>{{ $user->nomor_telpon }}</td> --}}
                                                                 <td>{{ $user->id_line }}</td>
                                                                 <td>{{ $user->ukuran ?? "-" }}</td>
-                                                                <td>{{ $user->rekening->nama ?? "-" }}</td>
                                                                 <td>
                                                                     @if($user->status == 'failed')
                                                                         <button class="btn btn-danger fw-semibold w-100" disabled>Failed</button>
