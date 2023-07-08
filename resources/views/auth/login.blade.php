@@ -4,7 +4,7 @@
     {{-- Navbar --}}
     <header class="navbar navbar-expand-lg sticky-top nav-mob bg-transparent">
         <nav class="container flex-wrap flex-lg-nowrap">
-            <a class="navbar-brand fw-semibold fs-3 text-mob">MOB FT 2022</a>
+            <a class="navbar-brand fw-semibold fs-3 text-mob">MOB FT 2023</a>
         </nav>
     </header>
     {{-- End Navbar --}}
@@ -12,7 +12,7 @@
         <div class="card p-4">
             <div class="row g-0 justify-content-center">
                 <div class="col-md-4 logo">
-                    <img src="{{ asset('img/logo(2).png') }}" class="img-fluid">
+                    <img src="{{ asset('img/logo.png') }}" class="img-fluid">
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
@@ -59,13 +59,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="register">
+                            <div class="register">
                                 <label for="">Tidak Punya Akun?</label>
                                 <label>
-                                    <a class="nav-link active" aria-current="page" href=""
+                                    <a class="nav-link active" aria-current="page" href="{{ route('register') }}"
                                     style="color: #242a68"><b>Daftar</b></a>
                                 </label>
-                            </div> -->
+                            </div>
                         </form>
                     </div>
                 </div>

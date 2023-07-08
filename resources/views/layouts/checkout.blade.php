@@ -52,7 +52,7 @@
 							<tbody>
 								<tr>
 									<td class="py-4">
-										<img src="{{ asset('img/baju1(2).png')}}" alt="" class="w-25">
+										<img src="{{ asset('img/baju1.png')}}" alt="" class="w-25">
 										<span class="ms-3">Baju Kaos MOB FT</span>
 									</td>
 									<td>{{ $ukuran }}</td>

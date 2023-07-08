@@ -16,7 +16,7 @@
   {{-- Navbar --}}
   <header class="navbar navbar-expand-lg sticky-top nav-mob bg-transparent">
     <nav class="container flex-wrap flex-lg-nowrap">
-      <a class="navbar-brand fw-semibold fs-3 text-mob">MOB FT 2022</a>
+      <a class="navbar-brand fw-semibold fs-3 text-mob" style="color: #40128B">MOB FT 2023</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -57,8 +57,9 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 d-flex flex-column justify-content-center">
-          <h1 class="text-mob fw-bold">Selamat Datang di<br>MOB FT 2022</h1>
-          <p class="fs-5 text-mob mt-3">Status pembayaranmu:
+          <h1 class="text-mob text-center text-md-start fw-bold">Selamat Datang di</h1>
+          <h1 class="title-mob text-center text-md-start fw-bold">MOB FT 2023</h1>
+          <p class="fs-5 mt-3 text-center text-md-start"> <span class="fw-bold">Status pembayaranmu:</span>
             @if ($user->status == 'unpaid')
               <span class="badge text-bg-secondary fw-semibold">Belum Memesan</span>
             @elseif($user->status == 'failed')
@@ -73,10 +74,9 @@
               <br><br>
               <span class="small">Validasi pembayaran membutuhkan waktu maksimal <span class="fw-bold">3
                   hari</span></span><br>
-              <span class="small">Apabila terdapat kendala terkait validasi pembayaran, silahkan chat <span class="fw-bold">Reynard (085607616739)</span> atau <span class="fw-bold">Dhita
-                  (081332530021)</span> via <span class="fw-bold">WhatsApp</span></span>
+              <span class="small">Apabila terdapat kendala terkait validasi pembayaran, silahkan chat <span class="fw-bold">Christin (082271185825)</span> via <span class="fw-bold">WhatsApp</span></span>
             @elseif($user->status == 'success')
-              <span class="badge text-bg-success fw-semibold">Success</span>
+              <span class="badge text-bg-success fw-bold">Success</span>
               <br>
               <span>Ukuran yang dipesan: <span class="fw-bold">{{ $user->ukuran }}</span></span>
               {{-- @if ($user->batchs_id != 0)
@@ -112,14 +112,14 @@
                 <br><br><span>Pengambilan barang sudah kamu konfirmasi</span><br>
                 <span>Sampai jumpa di <b>MOB FT 2023</b></span>
               @else
-                <br><br><span>Pengambilan baju dilakukan pada <span class="fw-bold">Selasa, 16 Agustus 2022</span></span>
+                <br><br><span>Pengambilan baju dilakukan pada <span class="fw-bold">Sabtu, 12 Agustus 2023</span></span>
               @endif
             @endif
           </p>
 
         </div>
-        <div class="col-md-6">
-          <img src="{{ asset('img/logo(2).png') }}" class="img-fluid">
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <img src="{{ asset('img/graphic1.png') }}" class="img-fluid w-md-75">
         </div>
       </div>
     </div>
@@ -164,39 +164,42 @@
   </section>
   {{-- End Selamat Datang --}}
 
-  {{-- Kostum MOBFT 2022 --}}
+  {{-- Kostum MOBFT 2023 --}}
   {{-- Body --}}
-  <section class="py-5">
+  <section class="py-2 py-md-5">
     <div class="container">
-      <h1 class="text-mob fw-bold">Baju MOB FT 2022</h1>
+      <h1 class="text-center text-md-start text-mob fw-bold">Baju MOB FT 2023</h1>
       <div class="row mt-5">
-        <div class="col-lg-4 d-flex justify-content-center mb-3">
-          <div class="owl-carousel">
+        <div class="col-lg-6 d-flex justify-content-center mb-3 px-md-5">
+            <img class="w-100" src="{{ asset('img/displayshirt.png') }}" alt="">
+
+          {{-- <div class="owl-carousel">
             <div>
-              <img src="{{ asset('img/baju1(2).png') }}" alt="">
+              <img src="{{ asset('img/baju1.png') }}" alt="">
             </div>
             <div>
-              <img src="{{ asset('img/baju2(2).png') }}" alt="">
+              <img src="{{ asset('img/baju2.png') }}" alt="">
             </div>
-          </div>
+          </div> --}}
         </div>
-        <div class="col-lg-8">
-          <p class="fs-5 text-mob fw-bold">
-            Keterangan:
-          </p>
-          <p class="fs-5 text-mob">
-            Size: Panjang Bahu x Panjang Badan (cm) <br>
+        <div class="col-lg-6">
+          <h4 class="mt-3 mt-md-none text-center text-md-start text-mob fw-bold">
+            Keterangan
+          </h4>
+          <p class="fs-5">
+            <span class="fw-bold">Size:</span> <br> 
+            Panjang Bahu x Panjang Badan (cm) <br>
             Panjang Lengan: 23-24 cm <br>
             Toleransi kurang lebih 1 cm
           </p>
-          <p class="fs-5 text-mob fw-bold">
+          <p class="fs-5 fw-bold">
             Harga:
           </p>
-          <p class="fs-5 text-mob">
+          <p class="fs-5">
             Rp 80,000.00
           </p>
           <form action="{{ route('checkout') }}" method="get">
-            <label class="fs-5 text-mob mb-2 fw-bold" id="sizedesc">Ukuran: </label>
+            <label class="fs-5 mb-2 fw-bold" id="sizedesc">Ukuran: </label>
 
             <ul style="padding-left: 0">
               <label for="sizeS">
@@ -237,20 +240,22 @@
             </ul>
             <div class="d-flex justify-content-end">
               <input type="hidden" id='status' value="{{ $user->status }}">
-              <button id="btn-submit" class="btn btn-beli btn-lg" type="submit">Beli</button>
+              @if ($user->status == 'unpaid'|| $user->status == 'failed')
+                <button id="btn-submit" class="btn btn-beli btn-lg" type="submit" disabled>Beli</button>
+              @endif
             </div>
           </form>
         </div>
       </div>
     </div>
   </section>
-  {{-- End Kostum MOBFT 2022 --}}
+  {{-- End Kostum MOBFT 2023 --}}
 
   {{-- Footer --}}
   <footer>
     <div class="text-center">
-      <p>Developed by Information Technology Department MOB FT 2022</p>
-      <p>© 2022 MOB FT 2022. All Rights Reserved.</p>
+      <p>Developed by Information Technology Department MOB FT 2023</p>
+      <p>© 2023 MOB FT 2023. All Rights Reserved.</p>
     </div>
   </footer>
   {{-- End Footer --}}
@@ -343,6 +348,7 @@
       }
 
       $('#sizedesc').html(description)
+      $('#btn-submit').removeAttr('disabled')
     }
 
     const changeSize = (pilihan) => {

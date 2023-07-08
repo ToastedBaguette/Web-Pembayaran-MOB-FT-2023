@@ -29,7 +29,7 @@ Route::middleware(['auth'])->group(function() {
     Route::post('/admin-change/dummy','ChangePasswordController@dummy')->name('change-dummy');
 });
 
-Auth::routes(['register'=>false]);
+Auth::routes(['register']);
 
 Route::post('/user-change','ChangePasswordController@change')->name('user-change');
 

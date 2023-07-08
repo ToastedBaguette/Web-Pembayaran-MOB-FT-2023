@@ -4,7 +4,7 @@
 {{-- Navbar --}}
 <header class="navbar navbar-expand-lg sticky-top nav-mob bg-transparent">
     <nav class="container flex-wrap flex-lg-nowrap">
-        <a class="navbar-brand fw-semibold fs-3 text-mob">MOB FT 2022</a>
+        <a class="navbar-brand fw-semibold fs-3 text-mob">MOB FT 2023</a>
     </nav>
 </header>
 {{-- End Navbar --}}
@@ -14,7 +14,7 @@
             <div class="card">
 
                 <div class="d-flex justify-content-center">
-                    <img src="{{ asset('img/logo(2).png') }}" class="card-img-center p-3" alt="..." style="height: 200px; width: 200px;">
+                    <img src="{{ asset('img/logo.png') }}" class="card-img-center p-3" alt="..." style="height: 200px; width: 200px;">
                 </div>
 
                 <div class="card-body px-4 mx-1 text-mob">
