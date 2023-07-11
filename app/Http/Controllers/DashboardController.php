@@ -11,6 +11,9 @@ class DashboardController extends Controller
 {
     function index() {
         $user = Auth::user();
+        if($user->admin != null){
+            return redirect()->route('admin-dashboard');
+        }
         $batch = '';
         $listBatch = array();
         $listBatchPilihan = array();

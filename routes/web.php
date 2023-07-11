@@ -16,14 +16,14 @@ use App\Http\Middleware\CheckReset;
 
 Route::middleware(['auth'])->group(function() {
     Route::middleware(['checkReset'])->group(function(){
-        Route::get('/', 'DashboardController@index')->middleware('can:isUser')->name('dashboard');
+        Route::get('/', 'DashboardController@index')->name('dashboard');
         Route::get('/checkout', 'CheckoutController@index')->middleware('can:isUser')->name('checkout');
         Route::post('/checkout', 'CheckoutController@checkout')->name('checkout-product');
+        Route::post('/konfirm-pengambilan', 'DashboardController@konfirmPengambilan')->middleware('can:isUser')->name('konfirm-pengambilan');
+        // Route::post('/pilih-batch', 'DashboardController@pilihBatch')->name('pilih-batch');
         Route::get('/admin-dashboard', 'AdminController@index')->middleware('can:isAdmin')->name('admin-dashboard');
         Route::post('/update-status', 'AdminController@updateStatus')->middleware('can:isAdmin')->name('update-status');
         Route::post('/konfirmasi-pengambilan', 'AdminController@konfirmasiPengambilan')->middleware('can:isAdmin')->name('konfirmasi-pengambilan');
-        // Route::post('/pilih-batch', 'DashboardController@pilihBatch')->name('pilih-batch');
-        Route::post('/konfirm-pengambilan', 'DashboardController@konfirmPengambilan')->name('konfirm-pengambilan');
     });
     Route::get('/admin-change','ChangePasswordController@admin')->name('admin-change');
     Route::post('/admin-change/dummy','ChangePasswordController@dummy')->name('change-dummy');
