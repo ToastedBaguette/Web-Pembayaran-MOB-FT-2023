@@ -74,7 +74,7 @@
               <br><br>
               <span class="small">Validasi pembayaran membutuhkan waktu maksimal <span class="fw-bold">3
                   hari</span></span><br>
-              <span class="small">Apabila terdapat kendala terkait validasi pembayaran, silahkan chat <span class="fw-bold">Christin (082271185825)</span> via <span class="fw-bold">WhatsApp</span></span>
+              <span class="small">Apabila terdapat kendala terkait validasi pembayaran, silahkan chat OA Line MOB FT 2023 <span class="fw-bold"><a href="https://line.me/ti/p/@440knlxc">@440knlxc</a></span></span>
             @elseif($user->status == 'success')
               <span class="badge text-bg-success fw-bold">Success</span>
               <br>
