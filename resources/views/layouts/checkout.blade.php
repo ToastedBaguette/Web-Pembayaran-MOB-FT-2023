@@ -57,7 +57,7 @@
 									</td>
 									<td>{{ $ukuran }}</td>
 									<td>1</td>
-									<td>Rp 80,000.00</td>
+									<td>Rp 90,000.00</td>
 								</tr>
 							</tbody>
 							<tfoot>

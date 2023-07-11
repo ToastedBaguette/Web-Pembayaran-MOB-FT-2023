@@ -66,7 +66,8 @@
               <span class="badge text-bg-danger fw-semibold">Failed</span>
               <br><br>
               <span class="small">Pembayaran sebelumnya <span class="fw-bold">TIDAK VALID.</span> Silahkan lakukan
-                pemesanan ulang dengan mengunggah bukti pembayaran yang valid</span>
+                pemesanan ulang dengan mengunggah bukti pembayaran yang valid</span><br>
+                <span class="small">Apabila terdapat kendala terkait validasi pembayaran, silahkan chat OA Line MOB FT 2023 <span class="fw-bold"><a href="https://line.me/ti/p/@440knlxc">@440knlxc</a></span></span>
             @elseif($user->status == 'pending')
               <span class="badge text-bg-warning fw-semibold">Pending</span>
               <br>
@@ -196,7 +197,7 @@
             Harga:
           </p>
           <p class="fs-5">
-            Rp 80,000.00
+            Rp 90,000.00
           </p>
           <form action="{{ route('checkout') }}" method="get">
             <label class="fs-5 mb-2 fw-bold" id="sizedesc">Ukuran: </label>
