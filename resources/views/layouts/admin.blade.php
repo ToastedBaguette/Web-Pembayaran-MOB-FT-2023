@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <!-- Favicon icon -->
   <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/logo.png') }}">
-  <title>MOB FT 2022 - Admin</title>
+  <title>MOB FT 2023 - Admin</title>
   <!-- Custom CSS -->
   <link href="{{ asset('admin/assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
   <link href="{{ asset('admin/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
@@ -18,6 +18,7 @@
   <link href="{{ asset('admin/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
   <!-- Custom CSS -->
   <link href="{{ asset('admin/dist/css/style.min.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('admin/custom.css')}}">
 
   <style>
     td {
@@ -137,7 +138,7 @@
         <!-- Sidebar navigation-->
         <nav class="sidebar-nav">
           <ul id="sidebarnav">
-            <li class="nav-small-cap"><span class="hide-menu">Menu</span></li>
+            <li class="nav-small-cap"><span class="hide-menu secondary-font">Menu</span></li>
             <li class="sidebar-item selected"> <a class="sidebar-link sidebar-link" href="#" aria-expanded="false"><i data-feather="user" class="feather-icon"></i><span class="hide-menu">Transaksi</span></a>
             </li>
           </ul>
@@ -181,7 +182,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Transaksi Aktif <span style="font-style: italic; font-weight: normal"> (Success, Pending, Failed)</span></h4>
+                <h4 class="card-title secondary-font">Transaksi Aktif <span class="secondary-font" style="font-style: italic; font-weight: normal"> (Success, Pending, Failed)</span></h4>
                 <div class="table-responsive">
                   <div id="zero_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                     <div class="row">
@@ -250,7 +251,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Ini List Yang Belum Bayar >:(</h4>
+                <h4 class="card-title secondary-font">Ini List Yang Belum Bayar >:(</h4>
                 <div class="table-responsive">
                   <div id="one_config_wrapper" class="dataTables_wrapper container-fluid dt-bootstrap4">
                     <div class="row">
@@ -297,9 +298,10 @@
       <!-- ============================================================== -->
       <!-- footer -->
       <!-- ============================================================== -->
+      
       <footer class="footer text-center text-muted">
-        <p>Developed by Information Technology Department MOB FT 2022</p>
-        <p>© 2022 MOB FT 2022. All Rights Reserved.</p>
+        <p class="">Developed by Information Technology Department MOB FT 2023</p>
+        <p class="">© 2023 MOB FT 2023. All Rights Reserved.</p>
       </footer>
       <!-- ============================================================== -->
       <!-- End footer -->
