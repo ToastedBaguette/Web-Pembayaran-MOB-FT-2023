@@ -63,7 +63,7 @@
 							<tfoot>
 								<tr>
 									<td colspan="3" class="text-end">Subtotal</td>
-									<td class="fw-bold">Rp 80,000.00</td>
+									<td class="fw-bold">Rp 90,000.00</td>
 								</tr>
 							</tfoot>
 						</table>

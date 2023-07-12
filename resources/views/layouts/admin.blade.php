@@ -190,6 +190,7 @@
                         <table id="zero_config" class="table table-striped table-bordered no-wrap dataTable" role="grid" aria-describedby="zero_config_info">
                           <thead>
                             <tr role="row">
+                              <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 0px;">Konfirmasi</th>
                               <th class="sorting_asc" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 0px;">NRP</th>
                               <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 0px;">Nama</th>
                               <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 0px;">Jurusan</th>
@@ -198,12 +199,24 @@
                               <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 0px;">Ukuran</th>
                               <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 0px;">Status</th>
                               <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 0px;">Bukti Pembayaran</th>
-                              <th class="sorting" tabindex="0" aria-controls="zero_config" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 0px;">Konfirmasi Pengambilan</th>
                             </tr>
                           </thead>
                           <tbody>
                             @foreach ($users as $user)
                               <tr role='row' class="text-center">
+                                 <td>
+                                  @if ($user->status == 'success')
+                                    @if ($user->konfirmasi == 0)
+                                      <button class="btn btn-primary fw-semibold w-100" onclick="konfirmasiPengambilan('{{ $user->id }}')">Konfirmasi</button>
+                                    @elseif($user->konfirmasi == 1)
+                                      <button class="btn btn-warning fw-semibold w-100" disabled>Confirmed Admin</button>
+                                    @elseif($user->konfirmasi == 2)
+                                      <button class="btn btn-success fw-semibold w-100 " disabled>Confirmed Maharu</button>
+                                    @endif
+                                  @else
+                                    <button class="btn btn-danger fw-semibold w-100" disabled>Belum Sukses</button>
+                                  @endif
+                                </td>
                                 <td>{{ $user->nrp }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->jurusan }}</td>
@@ -221,19 +234,6 @@
                                 </td>
                                 <td>
                                   <button class="btn btn-primary w-100" onclick="showBukti('{{ $user->bukti_pembayaran }}')">Tampilkan</button>
-                                </td>
-                                <td>
-                                  @if ($user->status == 'success')
-                                    @if ($user->konfirmasi == 0)
-                                      <button class="btn btn-primary fw-semibold w-100" onclick="konfirmasiPengambilan('{{ $user->id }}')">Konfirmasi</button>
-                                    @elseif($user->konfirmasi == 1)
-                                      <button class="btn btn-warning fw-semibold w-100" disabled>Confirmed Admin</button>
-                                    @elseif($user->konfirmasi == 2)
-                                      <button class="btn btn-success fw-semibold w-100" disabled>Confirmed Maharu</button>
-                                    @endif
-                                  @else
-                                    <button class="btn btn-danger fw-semibold w-100" disabled>Belum Success</button>
-                                  @endif
                                 </td>
                               </tr>
                             @endforeach
