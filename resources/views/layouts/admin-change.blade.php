@@ -10,7 +10,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/logo.png') }}">
-    <title>MOB FT 2022 - Admin</title>
+    <title>MOB FT 2023 - Admin</title>
     <!-- Custom CSS -->
     <link href="{{ asset('admin/assets/extra-libs/c3/c3.min.css') }}" rel="stylesheet">
     <link href="{{ asset('admin/assets/libs/chartist/dist/chartist.min.css') }}" rel="stylesheet">
@@ -236,8 +236,8 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center text-muted">
-                <p>Developed by Information Technology Department MOB FT 2022</p>
-                <p>© 2022 MOB FT 2022. All Rights Reserved.</p>
+                <p>Developed by Information Technology Department MOB FT 2023</p>
+                <p>© 2023 MOB FT 2023. All Rights Reserved.</p>
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
