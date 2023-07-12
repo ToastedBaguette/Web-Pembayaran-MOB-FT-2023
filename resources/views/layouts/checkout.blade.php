@@ -86,7 +86,7 @@
 									<div>Metode pembayaran</div>
 									@foreach($rekening as $r)
 										<div class="form-check mt-3">
-											<input class="form-check-input" type="radio" name="payment_method" value="{{ $r->id }}" id="method-{{ $r->id }}" required>
+											<input class="form-check-input" type="radio" name="payment_method" value="{{ $r->id }}" id="method-{{ $r->id }}" required checked>
 											<label class="form-check-label" for="method-{{ $r->id }}">
 												{{ $r->jenis }} <span class="fw-bold">{{ $r->nomor }}</span> a/n <span class="fw-bold">{{ $r->nama }}</span>
 											</label>
